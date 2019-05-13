@@ -16,7 +16,7 @@ class PlayerInput extends React.Component {
   handleChange(event) {
     const value = event.target.value;
 
-    this.setState(() => ({ username: value })
+    this.setState(() => ({ username: value }))
   }
   handleSubmit(event) {
     event.preventDefault();
@@ -27,9 +27,9 @@ class PlayerInput extends React.Component {
     );
   }
   render() {
-
     const { username } = this.state
     const { label } = this.props
+
     return (
       <form className='column' onSubmit={this.handleSubmit}>
         <label className='header' htmlFor='username'>{label}</label>
@@ -78,21 +78,17 @@ class Battle extends React.Component {
     this.setState(() => ({
       [id + 'Name']: username,
       [id + 'Image']: `https://github.com/${username}.png?size=200`
-    }));
+    }))
   }
   handleReset(id) {
-
     this.setState(() => ({
       [id + 'Name']: '',
       [id + 'Image']: null
     }))
-    
   }
   render() {
-    const match = this.props;
-
-    const { playerOneName, playerOneImage, playerOneImage,playerTwoName,playerTwoImage } = this.state
-  
+    const { match } = this.props;
+    const { playerOneName, playerOneImage, playerTwoName, playerTwoImage } = this.state;
 
     return (
       <div>
